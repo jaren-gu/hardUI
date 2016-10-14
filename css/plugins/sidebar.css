@@ -1,0 +1,456 @@
+/***********************************
+           sidebar 样式
+************************************/
+#sidebar_left {
+    color: #fff;
+    font-size: 13px;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 250px;
+    min-height: 100%;
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+.sidebar-left-content {
+    height: 100%;
+}
+#sidebar_left {
+    background-color: #4c4a49;
+}
+#sidebar_left.nano.affix {
+    padding-bottom: 0;
+}
+.nano {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.nano.affix {
+    height: 100%;
+}
+.nano > .nano-content {
+    height: 100%;
+    overflow-y: auto;
+}
+.nano.has-scrollbar > .nano-content {
+    height: 100%;
+    /*overflow-y: scroll;*/
+    overflow-x: hidden;
+}
+#sidebar_left.affix {
+    position: fixed;
+}
+
+/*sidebar-header*/
+.sidebar-widget {
+    position: relative;
+    padding: 8px 13px;
+}
+.sidebar-widget.author-widget {
+    margin-top: 15px;
+}
+.sidebar-widget.author-widget .media-left img {
+    max-width: 40px;
+    width: 40px\9; /* 为解决ie8下,头像宽度问题 */
+    border: 2px solid #888;
+    border-radius: 50%;
+}
+.sidebar-widget.author-widget .media-body {
+    padding-left: 3px;
+    color: #FFF;
+    font-weight: 300;
+}
+.sidebar-widget.author-widget .media-links a {
+    display: inline-block;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    color: #AAA;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+/*sidebar-menu*/
+.sidebar-menu {
+    padding-bottom: 20px;
+}
+.nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+.nav:before,.nav:after{
+    display: table;
+    content: '';
+}
+.nav:after{
+    clear: both;
+}
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+.sidebar-menu .sidebar-label {
+    text-transform: uppercase;
+    color: #70829a;
+    font-weight: 600;
+    padding-left: 18px;
+    padding-bottom: 3px;
+    font-size: 12px;
+}
+.sidebar-menu .sidebar-label {
+    color: #908885;
+}
+.sidebar-menu > li {
+    margin: 0;
+}
+.sidebar-menu > li > a {
+    padding: 0;
+    line-height: 37px;
+    height: 37px;
+    overflow: hidden;
+}
+.sidebar-menu > li > a {
+    color: #ffffff;
+}
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+.sidebar-menu > li > a > span.sidebar-icon{
+    float: left;
+    top: 0;
+    line-height: 37px;
+    width: 38px;
+    font-size: 13px;
+    text-align: center;
+    padding-left: 13px;
+}
+.sidebar-menu > li > a > span.sidebar-title{
+    font-weight: 500;
+    padding-left: 6px;
+}
+.sidebar-menu li > a > span.caret {
+    position: absolute;
+    top: 45%;
+    right: 15px;
+    border-top: 5px solid;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+}
+.sidebar-menu li > a > span.caret, .sidebar-menu li > a.menu-open > span.caret {
+    color: inherit;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    margin: 0;
+    border: 0;
+}
+.sidebar-menu li > a > span.caret {
+    color: #858483;
+}
+
+.sidebar-menu li > ul > li > a > span.caret, .sidebar-menu li > ul > li > a.menu-open > span.caret {
+    top: 11px;
+}
+
+.sidebar-menu > li > a.menu-open:after, .sidebar-menu > li.active > a:after, .sidebar-menu > li:hover > a:after, .sidebar-menu > li:focus > a:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: #AAA;
+}
+.sidebar-menu li > a > span.caret:after {
+    content: "\f105";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    font-size: 14px;
+    display: inline-block;
+    padding-right: 3px;
+    float: right;
+    right: 0;
+}
+.sidebar-menu li > a.menu-open > span.caret:after {
+    content: "\f107";
+}
+.sidebar-menu > li > ul ,.sidebar-menu > li > ul > li > ul{
+    clear: both;
+    display: none;
+    width: 250px;
+    height: auto;
+}
+.sidebar-menu li > a.menu-open + ul {
+    display: block;
+}
+.sidebar-menu > li > ul {
+    background-color: #454241;
+}
+.sidebar-menu > li > ul > li ul {
+    background-color: #3f3d3c;
+}
+.sidebar-menu > li > ul > li > a ,.sidebar-menu > li > ul > li > ul > li > a{
+    padding: 11px 20px 11px 30px;
+    margin-top: 2px;
+}
+.sidebar-menu > li > ul > li > a > span.sidebar-icon {
+    margin-right: 10px;
+    font-size: 11px;
+}
+.sidebar-menu > li > ul > li > a ,.sidebar-menu > li > ul > li > ul > li > a{
+    color: #bbbbbb;
+}
+.sidebar-menu > li > ul > li > a:hover,.sidebar-menu > li > ul > li > a:visited {
+    color: #ffffff;
+}
+.sidebar-menu > li > ul > li > a.menu-open:after, .sidebar-menu > li > ul > li.active > a:after, .sidebar-menu > li > ul > li:hover > a:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: #AAA;
+}
+.sidebar-menu > li > ul > li.active > a:after, .sidebar-menu > li > ul > li > a.menu-open:after {
+    background: #3498db;
+}
+.sidebar-menu > li > ul > li:hover > a:after {
+    background: #3498db;
+}
+.sidebar-menu > li > ul > li > ul > li  > a:hover,.sidebar-menu > li > ul > li > ul > li  > a:visited{
+    color: #ffffff;
+}
+
+.sidebar-menu > li > ul > li > ul > li.active > a:after, .sidebar-menu > li > ul > li > ul > li:hover > a:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5%;
+    height: 90%;
+    width: 3px;
+    background: #999;
+}
+.sidebar-menu > li > ul > li > ul > li.active > a:after,.sidebar-menu > li > ul > li > ul > li:hover > a:after {
+    background: #967adc;
+}
+
+/*sidebar 缩小样式*/
+body.sb-l-m #sidebar_left {
+    z-index: 1028;
+    overflow: visible;
+    width: 60px;
+    height: 100%;
+    left: 0;
+    background-color: #4c4a49;
+}
+body.sb-l-m #sidebar_left.nano {
+    position: absolute;
+}
+body.sb-l-m .sidebar-menu > li {
+    padding: 7px 0;
+}
+body.sb-l-m .sidebar-menu > li > a {
+    overflow: visible;
+}
+body.sb-l-m .sidebar-menu > li > a > span.sidebar-icon {
+    color: #ccc;
+    left: -1px;
+    width: 60px;
+    font-size: 18px;
+    padding-left: 0;
+}
+body.sb-l-m .sidebar-menu > li > a > .sidebar-title {
+    position: absolute;
+    left: 60px;
+    top: -4px;
+    width: 180px;
+    height: 44px;
+    line-height: 44px;
+    font-size: 14px;
+    padding-left: 15px;
+    border-left: 1px solid #222;
+    background-color: transparent;
+}
+body.sb-l-m .sidebar-menu > li > a > .sidebar-title {
+    background-color: #454241;
+}
+
+body.sb-l-m .sidebar-header, body.sb-l-m #sidebar_left .sidebar-title, body.sb-l-m #sidebar_left .sidebar-label, body.sb-l-m #sidebar_left .caret ,body.sb-l-m .navbar-brand{
+    display: none;
+}
+body.sb-l-m .navbar-branding {
+    width: 60px;
+}
+
+body.sb-l-m .sidebar-menu > li > a.menu-open + ul {
+    display: none;
+}
+
+body.sb-l-m .sidebar-menu > li > ul {
+    position: absolute;
+    left: 60px;
+    /*top: 38px;*/
+    width: 180px;
+    height: auto;
+    border-left: 1px solid #222;
+    padding-bottom: 7px;
+    overflow: hidden;
+}
+body.sb-l-m .sidebar-menu > li > ul > li ul {
+    width: 180px;
+}
+
+body.sb-l-m .sidebar-menu > li > ul > li {
+    overflow: hidden;
+}
+
+body.sb-l-m .sidebar-menu li > ul > li > a {
+    padding: 8px 15px 8px 15px;
+}
+body.sb-l-m .sidebar-menu > li:hover > a + ul, body.sb-l-m .sidebar-menu > li:hover > a > .sidebar-title, body.sb-l-m .sidebar-menu > li:hover > ul .caret {
+    display: block !important;
+}
+
+body.sb-l-m #sidebar_left.nano > .nano-content {
+    overflow: visible;
+    right: 0 !important;
+}
+
+/***********************************
+           navbar 样式
+************************************/
+.navbar-fixed-top {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.navbar-branding {
+    position: relative;
+    overflow: hidden;
+    float: left;
+    width: 250px;
+    height: 60px;
+    margin-right: 10px;
+    background-color: transparent;
+}
+.navbar-brand {
+    float: left;
+    padding: 15.5px 11px;
+    font-size: 17px;
+    line-height: 19px;
+    height: 50px;
+}
+
+.navbar-branding .navbar-brand {
+    color: #666;
+    height: 60px;
+    line-height: 58px;
+    padding: 0;
+    padding-left: 18px;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+#toggle_sidemenu_l {
+    color: #666;
+    float: right;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 58px;
+    max-height: 60px;
+    width: 60px;
+    text-align: center;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.navbar #toggle_sidemenu_l,.navbar .navbar-brand{
+    color: #fff;
+}
+
+/***********************************
+           内容样式
+************************************/
+#content_wrapper {
+    position: relative;
+    left: 0px;
+    margin-left: 250px;
+}
+body.sb-l-m #content_wrapper {
+    margin-left: 60px;
+}
+#content_wrapper {
+    padding-top: 60px;
+}
+#content {
+    padding: 10px 15px 50px 15px;
+    position: relative;
+}
+
+/* ==============================================
+   Topbar
+     A. Topbar
+     B. Topbar Alternate Style
+=================================================
+  A. Topbar
+================================================= */
+#topbar {
+  z-index: 2;
+  position: relative;
+  width: 100%;
+  min-height: 51px;
+  padding: 10px 21px;
+  background: #fafafa;
+  border-bottom: 1px solid #e0e0e0;
+}
+.breadcrumb {
+  float: left;
+  position: relative;
+  padding: 1px 25px 0 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  border-radius: 0;
+  background-color: transparent;
+}
+.breadcrumb > li {
+  color: #888;
+}
+.breadcrumb > li.crumb-active > a {
+  color: #555;
+  font-size: 18px;
+}
+/*===============================================
+   B. Topbar - Alternate Style
+      Requires ".alt" class on #topbar
+================================================= */
+#topbar.alt {
+  min-height: 69px;
+  min-height: 27px\9;
+  padding: 21px 22px;
+  background: #e7e7e7;
+  border-bottom: 1px solid #ddd;
+}
+#topbar.alt .breadcrumb {
+  font-size: 14px;
+}
+
+.page-heading {
+  position: relative;
+  padding: 30px 40px;
+  margin: -25px -20px 25px;
+  border-bottom: 1px solid #d9d9d9;
+  background-color: #f2f2f2;
+}

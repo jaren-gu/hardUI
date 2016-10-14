@@ -1,0 +1,58 @@
+/*===============================================
+ Tags Manager
+================================================= */
+.tag-container {
+    margin-top: 10px;
+}
+.tm-tag {
+    margin: 0px 8px 5px 0px;
+    padding: 4px 8px;
+    color: #FFF;
+    font-size: 13px;
+    font-weight: 600;
+    border: 0;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    box-shadow: none;
+    background: #AAA;
+    display: inline-block;
+}
+.tm-tag .tm-tag-remove {
+    color: #FFF;
+    opacity: 0.6;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 0 3px;
+}
+.tm-tag .tm-tag-remove:hover {
+    color: #FFF;
+    opacity: 1;
+}
+.tm-tag.tm-tag-primary {
+    color: #FFF;
+    background-color: #57aae1;
+}
+.tm-tag.tm-tag-info {
+    color: #FFF;
+    background-color: #5dbde0;
+}
+.tm-tag.tm-tag-success {
+    color: #FFF;
+    background-color: #8cd481;
+}
+.tm-tag.tm-tag-warning {
+    color: #FFF;
+    background-color: #f8c969;
+}
+.tm-tag.tm-tag-danger {
+    color: #FFF;
+    background-color: #e57563;
+}
+.tm-tag.tm-tag-alert {
+    color: #FFF;
+    background-color: #b09ae4;
+}
+.tm-tag.tm-tag-system {
+    color: #FFF;
+    background-color: #50ccad;
+}

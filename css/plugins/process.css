@@ -1,0 +1,19 @@
+/* 支付进度 */
+.lc-process {width: 100%;height: 26px;zoom: 1;}
+.lc-process:after{display: block; clear: both; height: 0; content: "\0020";}
+.lc-process .unit,
+.lc-process .current,
+.lc-process .past{float: left; display: inline; height: 26px; width: 22%; background: #ccc; text-align: center; color: #fff; font-size: 14px; line-height: 26px;}
+.lc-process .current{background: #0099DA;}
+.lc-process .past{background: #9cddf5; color: #fff;}
+.lc-process .arrow,
+.lc-process .arrow-current,
+.lc-process .arrow-complete,
+.lc-process .arrow-past{position: relative; float: left; display: inline; width: 2%; height: 26px; overflow: hidden; background: #ccc;}
+.lc-process .lc-next{position: absolute; display: block; left: 0; top: -3px; height: 0; width: 0; overflow: hidden; border: solid 10px transparent; border-width: 16px 10px; _border-color: black; _filter: chroma(color=black); border-left-color: #fff;}
+.lc-process .lc-prev{position: absolute; display: block; left: 0; top: 0; height: 0; width: 0; overflow: hidden; border: solid 10px transparent; border-width: 13px 8px; _border-color: black; _filter: chroma(color=black); border-left-color: #ccc;}
+.lc-process .arrow-current .lc-prev{border-left-color: #0099DA;}
+.lc-process .arrow-complete{background: #0099DA;}
+.lc-process .arrow-complete .lc-prev{border-left-color: #9cddf5;}
+.lc-process .arrow-past{background: #9cddf5;}
+.lc-process .arrow-past .lc-prev{border-left-color: #9cddf5;}.lc-table{width: 100%; max-width: 100%; border-collapse: collapse; border-spacing: 0; color: #333;}

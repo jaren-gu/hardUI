@@ -1,0 +1,156 @@
+/**********************************
+        模态框样式
+***********************************/
+.mfp-bg{
+    z-index: 1042;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    opacity: 0.8;
+    background-color: #000;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+    overflow: hidden;
+    text-align: center;
+}
+.mfp-wrap {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1043;
+    position: fixed;
+    outline: none !important;
+    -webkit-backface-visibility: hidden;
+}
+.mfp-container {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    padding: 0 8px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.mfp-container:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+.mfp-content {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 auto;
+    text-align: left;
+    width: 100%;
+    z-index: 1045;
+}
+.popup-basic {
+    position: relative;
+    background: #FFF;
+    width: auto;
+    max-width: 450px;
+    margin: 40px auto;
+}
+.admin-form {
+    line-height: 1.231;
+    font-weight: 400;
+    font-size: 14px;
+    color: #626262;
+}
+.mfp-with-anim {
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    /* transform-style: preserve-3d; */
+    transform: rotateY(-60deg);
+}
+.mfp-with-anim {
+    opacity: 1;
+    transform: rotateY(0deg);
+}
+/**********************************
+        模态框内容容器样式
+***********************************/
+.as-modal{
+    position: relative;
+    background-color: #ffffff;
+    padding: 0px;
+    margin-bottom: 27px;
+    min-width: 450px;
+    display: none;
+}
+.as-modal-header{
+    position: relative;
+    padding: 0px 8px;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #e2e2e2;
+    background-color: #fafafa;
+
+}
+.as-modal-icon {
+    padding-left: 5px;
+}
+.as-modal-title{
+    padding-left: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    color: #999999;
+    margin: 0px;
+}
+.as-modal-body{
+    padding: 15px;
+    position: relative;
+    border-top: none;
+}
+.as-modal-body:before, .as-panel-body:after{
+    content: "";
+    display: table;
+}
+.as-modal-body:after{
+    clear: both;
+}
+.as-modal-footer {
+    padding: 10px 15px;
+    border-top: 1px solid #e2e2e2;
+    background: #fafafa;
+}
+/*********隐藏模态框button的样式**********/
+button.mfp-close{
+    overflow: visible;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+    display: block;
+    outline: none;
+    padding: 0;
+    z-index: 1046;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.mfp-close {
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-decoration: none;
+    text-align: center;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    padding: 0 0 18px 10px;
+    color: #333333;
+    font-style: normal;
+    font-size: 28px;
+    font-family: Arial, Baskerville, monospace;
+}
+

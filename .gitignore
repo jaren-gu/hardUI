@@ -1,3 +1,5 @@
 .idea/
-.vscode/
-node_modules/
+.project
+.buildpath
+.settings/
+Application/Runtime

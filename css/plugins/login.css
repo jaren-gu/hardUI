@@ -1,0 +1,389 @@
+html {
+  height: 100%;
+  background: #fff;
+}
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 900px;
+  margin: 0;
+  padding: 0;
+  background: #e9e9e9;
+  overflow-x: hidden;
+  /* Fix for webkit rendering */
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  font-size-adjust: 100%;
+}
+#main {
+  position: relative;
+  min-height: 100%;
+  background: #eeeeee;
+}
+/* psuedo background */
+#main:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #eeeeee;
+}
+#content_wrapper {
+  position: relative;
+  left: 0px;
+  margin-left: 250px;
+}
+/* Transitions */
+body.onload-check .navbar,
+body.onload-check .navbar-branding,
+body.onload-check #sidebar_left,
+body.onload-check #sidebar_right,
+body.onload-check #content_wrapper,
+body.onload-check #topbar {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+/*==================================================================
+  admin form
+===================================================================*/
+body.external-page.external-alt #content .admin-form {
+  margin-top: 5%;
+}
+body.external-page #content .admin-form {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 8%;
+}
+body.external-page {
+  min-height: 0;
+  overflow: auto;
+}
+body.external-page.external-alt #main {
+  background: #f4f4f4;
+}
+body.external-page.external-alt #content .as-panel .section-divider span {
+  color: #AAA;
+}
+
+.admin-form {
+  line-height: 1.231;
+  font-weight: 400;
+  font-size: 14px;
+  color: #626262;
+}
+.admin-form .button {
+  color: #243140;
+  border: 0;
+  height: 42px;
+  line-height: 42px;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 0 18px;
+  text-align: center;
+  vertical-align: top;
+  background: #DBDBDB;
+  display: inline-block;
+  -webkit-user-drag: none;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.2);
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+.admin-form .section {
+  margin-bottom: 22px;
+}
+.admin-form .section-divider {
+  height: 0;
+  border-top: 1px solid #DDD;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.admin-form .section-divider span {
+  display: inline-block;
+  position: relative;
+  padding: 0 17px;
+  background: #e9e9e9;
+  color: #999;
+  top: -11px;
+  font-size: 15px;
+}
+.admin-form.bg-light .section-divider span,
+.admin-form .bg-light .section-divider span {
+  background: #FAFAFA;
+}
+
+.admin-form .field-label {
+  display: block;
+  margin-bottom: 7px;
+}
+.admin-form label,
+.admin-form input,
+.admin-form select,
+.admin-form textarea {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: #626262;
+  outline: none;
+}
+.admin-form .append-icon,
+.admin-form .prepend-icon {
+  top: 0;
+  left: 0;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  width: 100%;
+}
+
+.admin-form .gui-input,
+.admin-form .gui-textarea,
+.admin-form .select > select,
+.admin-form input[type="button"],
+.admin-form input[type="submit"],
+.admin-form input[type="search"],
+.admin-form .select-multiple select {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+.admin-form .radio,
+.admin-form .button,
+.admin-form .tooltip,
+.admin-form .checkbox,
+.admin-form .gui-input,
+.admin-form .input-footer,
+.admin-form .notification,
+.admin-form .gui-textarea,
+.admin-form .select > select,
+.admin-form .select-multiple select {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  outline: none;
+}
+.admin-form .gui-input,
+.admin-form .gui-textarea {
+  padding: 10px;
+}
+.admin-form .select,
+.admin-form .gui-input,
+.admin-form .gui-textarea,
+.admin-form .select > select,
+.admin-form .select-multiple select {
+  position: relative;
+  vertical-align: top;
+  border: 1px solid #DDD;
+  display: -moz-inline-stack;
+  display: inline-block;
+  *display: inline;
+  color: #626262;
+  outline: none;
+  height: 42px;
+  width: 100%;
+  *zoom: 1;
+}
+.admin-form .gui-input:focus ~ .field-icon i,
+.admin-form .gui-textarea:focus ~ .field-icon i {
+  color: #4fc1e9;
+}
+.admin-form .gui-input:hover,
+.admin-form .gui-textarea:hover,
+.admin-form .select > select:hover,
+.admin-form .select-multiple select:hover,
+.admin-form .gui-input:hover ~ .input-footer,
+.admin-form .file .gui-file:hover + .gui-input,
+.admin-form .gui-textarea:hover ~ .input-footer {
+  border-color: #4fc1e9;
+}
+.admin-form .prepend-icon > input,
+.admin-form .prepend-icon > textarea {
+  padding-left: 36px;
+}
+
+.admin-form .field-icon i {
+  color: #BBB;
+  position: relative;
+}
+.admin-form .append-icon .field-icon,
+.admin-form .prepend-icon .field-icon {
+  top: 0;
+  z-index: 4;
+  width: 42px;
+  height: 42px;
+  color: inherit;
+  line-height: 42px;
+  position: absolute;
+  text-align: center;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  pointer-events: none;
+}
+.admin-form .append-icon .field-icon i,
+.admin-form .prepend-icon .field-icon i {
+  position: relative;
+  font-size: 14px;
+}
+.admin-form .prepend-icon .field-icon {
+  left: 0;
+}
+.admin-form .append-icon .field-icon {
+  right: 0;
+}
+
+/*==================================================================
+  Button States
+===================================================================*/
+
+.admin-form .button:hover {
+  color: #243140;
+  background: #EEE;
+}
+.admin-form .button:active {
+  color: #1d2938;
+  -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.admin-form a.button,
+.admin-form span.button,
+.admin-form label.button {
+  line-height: 42px;
+  text-decoration: none;
+}
+.admin-form .button i {
+  font-size: 14px;
+}
+.admin-form .button-list .button {
+  margin-bottom: 5px;
+}
+
+
+
+
+/*==================================================================
+  Buttons - Social
+===================================================================*/
+.admin-form .facebook,
+.admin-form .facebook:hover,
+.admin-form .facebook:focus,
+.admin-form .googleplus,
+.admin-form .googleplus:hover,
+.admin-form .googleplus:focus {
+  color: #fff;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.08);
+}
+.admin-form .facebook {
+  background-color: #3b5998;
+}
+.admin-form .googleplus {
+  background-color: #dd4b39;
+}
+.admin-form .span-left {
+  padding-left: 56px;
+  text-align: left;
+}
+.admin-form .btn-social {
+  position: relative;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.admin-form .btn-social i {
+  font-size: 18px;
+  font-weight: normal;
+  position: relative;
+  top: 3px;
+}
+.admin-form .btn-social span {
+  -webkit-border-radius: 3px 0 0 3px;
+  -moz-border-radius: 3px 0 0 3px;
+  -o-border-radius: 3px 0 0 3px;
+  border-radius: 3px 0 0 3px;
+  display: inline-block;
+  text-align: center;
+  position: absolute;
+  width: 45px;
+  left: 0;
+}
+.admin-form .facebook span {
+  background-color: #31497D;
+}
+.admin-form .googleplus span {
+  background-color: #C03121;
+}
+.admin-form .googleplus:hover,
+.admin-form .googleplus:focus {
+  background-color: #8D2418;
+}
+.admin-form .facebook:hover,
+.admin-form .facebook:focus {
+  background-color: #25385F;
+}
+
+================================================= 
+  A. Content
+================================================= */
+#content {
+  padding: 15px 8px 40px 11px;
+}
+/* content padding on large resolutions */
+@media (min-width: 1100px) {
+  #content {
+    padding: 25px 20px 50px 21px;
+  }
+}
+/* Adds top padding to md columns as a spacer
+ * when they are mobile stacked */
+@media (max-width: 991px) {
+  #content .col-md-2 + .col-md-2,
+  #content .col-md-2 + .col-md-4,
+  #content .col-md-2 + .col-md-6,
+  #content .col-md-4 + .col-md-2,
+  #content .col-md-4 + .col-md-4,
+  #content .col-md-4 + .col-md-6,
+  #content .col-md-6 + .col-md-2,
+  #content .col-md-6 + .col-md-4,
+  #content .col-md-6 + .col-md-6 {
+    padding-top: 10px;
+  }
+}
+@media (max-width: 815px) {
+  #content .as-panel .as-panel-body {
+    overflow: hidden !important;
+    min-width: 0 !important;
+  }
+}
+
+/* login-links */
+body.external-page.external-alt .login-links,
+body.external-page.external-alt .login-links a {
+  color: #999;
+  font-size: 13px;
+  text-align: center;
+}
+body.external-page.external-alt .login-links a.active {
+  color: #3498db;
+}
+body.external-page.external-alt .login-links a {
+  color: #555;
+  font-weight: 600;
+}
