@@ -1,0 +1,106 @@
+# gulp 简明教程
+
+> 此教程为简要教程，完整使用可以参阅官方文档
+
+- [英文原文](https://github.com/gulpjs/gulp/blob/master/docs/README.md)  
+- [中文文档](https://github.com/lisposter/gulp-docs-zh-cn)
+
+## 介绍
+
+gulp 是一个前端自动化构建工具，可用于帮助我们去完成一些编译 scss 、压缩 js 等重复性工作。
+
+## 安装
+
+### 第一步： 安装 npm 环境
+
+gulp 基于 npm ，这意味着你需要[安装node环境](https://nodejs.org/en/)。
+
+### 第二步：初始化 npm 环境
+
+在项目目录下执行如下命令初始化 npm 环境，执行过程中可按指示填写相关信息，或者一路回车使用默认值，这些值你可以随时在随后生成的 `package.json` 文件内进行修改。
+```
+npm init
+```
+
+npm 安装模块的模式有两种，是哟哪种模式视需求而定。
+- 全局安装：安装的模块能在任意项目内使用  
+- 局部安装：安装的模块只能在当前项目内使用
+
+### 第三步：安装 gulp
+
+运行如下命令即可安装 gulp（注意，这里使用了全局安装，如果你不需要全局安装，请把 `-g` 参数去掉）
+```
+npm install -g --save-dev gulp 
+```
+参数说明： 
+- -g ： 以全局安装模式安装模块
+- --save-dev：安装并把依赖写入 package.json 文件中
+
+当然实际项目应用中不可能只安装 gulp ，我们可能还需要其它的一些模块，比如说我们可能还需要拼接 js 文件，那么我们就需要安装 `gulp-concat` 模块:
+
+```
+npm install --save-dev gulp-concat
+```
+
+至此，gulp 环境安装完毕，以下是 gulp 的一些使用说明。
+
+## 使用 
+
+使用之前，我们首先应该先了解一下 gulp 任务的大致流程。
+一个完整的 gulp 任务流程为：
+
+从 `src` 接口获取到资源，通过 `pipe` 接口传递到下一步处理，最后结果通过 `dest` 接口保存到指定目录
+
+> 注意： `dest` 并不是必要的，你可以放弃保存这些数据`
+
+大致如下图所示：
+
+![]('./docs/images/gulp_1.png')
+
+### gulpfile
+
+gulp 是怎么知道要完成什么任务，以及怎么完成呢，这就需要用到 gulofile.js 文件了。
+
+在编写 gulpfile.js 文件之前，我们需要了解一下 gulp 任务的编写语法。
+
+一般情况下我们会使用到 gulp 的五个接口
+- task ： 用于声明任务
+- src：用于指定资源文件路径
+- dest：用于指定存储路径
+- watch：用于指定监听路径
+- pipe：用于传递数据
+
+假定现在我们需要把 `./js` 目录下所有的 js 文件拼接成一个 js 文件，以方便引用，那么 gulpfile.js 文件可以这样编写：
+
+```
+//引入模块
+var gulp = require('gulp')
+var concat = require('gulp-concat')
+
+//声明 concatjs 任务
+gulp.task('concatjs',function(){
+    gulp.src('./js/*.js')  //指定资源为 ./js 下所有的 js 文件
+            .pipe(concat('all.js')) //把读取到的 js 文件整合到 all.js 文件中
+            .pipe(gulp.dest('./dist/js')) //把上一步得到的 all.js 存放到 ./dist/js 目录下
+})
+
+//声明 default 任务
+gulp.task('default',function(){
+    //运行 concatjs 任务
+    gulp.run('concatjs')
+
+    //监听 ./js 目录下所有的 js 文件，如果他们发生了变化就触发回调函数
+    gulp.watch('./js/*.js',function(){
+        gulp.run('concatjs')
+    })
+})
+```
+
+此例子中，我们声明了两个 gulp 任务，一个为名为 concatjs 一个为名为 default。
+
+gulp 的调用规则是 `gulp [taskname]`，其中 `default` 任务是 gulp 的默认任务，即当你在命令行输入 `gulp` 命令时，实际等于运行了 `gulp default`，因此要运行 `concatjs` 任务，其命令为 `gulp concatjs`。
+
+为了简化调用，我们在 `default` 任务中运行了 `concatjs` 任务，所以现在执行 `gulp` 的运行效果与 `gulp concatjs` 的运行效果一致，但它们实际上并不等价。
+
+除了简化调用，使用此方式是为了让 `default` 任务能完成多个 gulp 任务，但又同时让这些任务之间保持独立。
+
