@@ -55,7 +55,7 @@ npm install --save-dev gulp-concat
 
 大致如下图所示：
 
-![]('./docs/images/gulp_1.png')
+![](/docs/images/gulp_1.png)
 
 ### gulpfile
 
