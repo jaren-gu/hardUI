@@ -8,6 +8,7 @@ var uglify = require('gulp-uglify')
 var rename = require('gulp-rename')
 var autoprefixer = require('gulp-autoprefixer')
 var minicss = require('gulp-minify-css')
+var sourcemaps = require('gulp-sourcemaps')
 
 /**
  *  check scripts
@@ -24,11 +25,14 @@ gulp.task('lint', function () {
  * 合并脚本
  */
 gulp.task('concatjs', function () {
-    gulp.src('./js/*.js')
+    gulp.src('./js/**/*.js')
+        .pipe(sourcemaps.init({loadMaps: true}))
+        .pipe(gulp.dest('./dist/js'))
         .pipe(concat('all.js'))
         .pipe(gulp.dest('./dist/js'))
         .pipe(rename('all.min.js'))
         .pipe(uglify())
+        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./dist/js'))
 })
 
@@ -37,7 +41,8 @@ gulp.task('concatjs', function () {
  *  编译 sass
  */
 gulp.task('sass', function () {
-    gulp.src('./scss/*.scss', { base: 'src' })
+    gulp.src('./scss/**/*.scss')
+        .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(sass())
         .pipe(autoprefixer())
         .pipe(gulp.dest('./dist/css'))
@@ -45,6 +50,8 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('./dist/css'))
         .pipe(minicss())
         .pipe(rename('all.min.css'))
+        .pipe(gulp.dest('./dist/css'))
+        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./dist/css'))
 })
 
