@@ -120,3 +120,34 @@ a :hover{color : green;}
 - `.nav a:hover` ：表示在 `nav` 类下的所有 `a` 元素的 `:hover` 状态
 - `.nav a :hover` ：表示在 `nav` 类下的 `a` 元素内的所有子元素的 `:hover` 状态
 
+### 「扩展」 与 「继承」
+
+sass 让 css 代码有了对象的味道，那有没有对象的经典特性 -- 「扩展」 与 「继承」呢？
+
+有！sass 通过 `@extend` 就可以让样式得以「扩展」和 「继承」，例如：
+
+```css
+.a{
+    border: 1px solid #bbb;
+}
+
+.b{
+    @extend .a;
+    border-color: red;
+}
+```
+
+这段代码编译之后是这样的：
+
+```css
+.a, .b{
+    border: 1px solid #bbb;
+}
+
+.b{
+    border-color: red;
+}
+```
+
+`.b` 选择器在「继承」了 `.a` 选择器的样式之后，又再「扩展」了自己的样式。
+
