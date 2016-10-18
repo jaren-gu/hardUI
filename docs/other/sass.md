@@ -25,6 +25,19 @@ $font-size: 12px;
     font-size:$font-size;
 }
 ```
+### 运算
+
+sass 除了提供变量以外，还提供了简单的算术运算（加减乘除），颜色运算和布尔运算，但你很少会用到这一特性。
+
+以下是一些运算示例：
+```css
+p{
+    width: 1rem + 2rem; /*最终编译得出 width: 3rem;*/
+    content: "hello" + "world"; /*最终编译得出 content: "hello world";*/
+}
+```
+
+
 
 ### 嵌套
 
