@@ -164,3 +164,28 @@ sass 让 css 代码有了对象的味道，那有没有对象的经典特性 -- 
 
 `.b` 选择器在「继承」了 `.a` 选择器的样式之后，又再「扩展」了自己的样式。
 
+### mixin 
+
+有了「对象」，就当然有「方法」了， sass 通过 @mixin 提供了「方法」特性，@mixin 的使用示例如下：
+
+```css
+@mixin padding-horizontal( $value ){
+    padding-left: $value;
+    padding-right:$value;
+}
+
+.a{
+    border:1px solid #ccc;
+    @include padding-horizontal(3px);
+}
+```
+
+以上代码编译结果为
+
+```css
+.a{
+    border:1px solid #ccc;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+```
