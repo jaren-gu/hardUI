@@ -189,3 +189,54 @@ sass 让 css 代码有了对象的味道，那有没有对象的经典特性 -- 
     padding-right: 3px;
 }
 ```
+
+### 导入
+
+当 sass 代码开始庞大，我们可能会把代码分拆为不同的文件，但是为了引用方便，我们又希望把这些分散的 sass 文件编译成一个 css 文件，所幸 sass 提供了导入特性 @import 来解决这个问题。
+
+以下是一些 sass 文件导入的特性：
+
+- sass 文件可以以下划线 '_' 开头，但引入时可以忽略下划线
+- sass 文件的引入可以忽略文件后缀「sass」或「scss」
+- 引入的 sass 文件会合并到编译后的 css 文件中
+
+当然 sass 也可以直接引入 css 文件，这不会引起错误，但是要注意这两者的引入有一点不同：
+
+- css 文件的引入在编译后的 css 文件中依旧以 @import 方式存在，而不会合并到此 css 中
+
+以下是 sass 导入的使用示例：
+
+```css
+/* a.scss*/
+.a{
+    color:red;
+}
+
+/* b.css*/
+.b{
+    color:green;
+}
+
+/* c.scss*/
+@import "a"
+@import "b.css"
+.c{
+    color:blue;
+}
+```
+
+c.scss 文件的编译结果如下：
+
+```css
+@import "b.css"
+
+.a{
+    color:red;
+}
+
+.c{
+    color:blue;
+}
+```
+
+可以注意到，引入的 css 文件并没有被合并到编译结果中，而是依旧保持导入方式存在。
