@@ -1,8 +1,10 @@
 # sass 简明教程
 
-sass 是为了使 css 变得更容易编写而产生的一种 「css 预处理语言」
+> 本文总结自 [SASS 中文网](http://www.sasschina.com/guide/)
 
-以下是 sass 的特性介绍：
+### 简介
+
+sass 是为了使 css 变得更容易编写而产生的一种 「css 预处理语言」，以下是 sass 的特性介绍。
 
 ### 文件后缀
 
