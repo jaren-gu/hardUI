@@ -1,24 +1,25 @@
 {
-  "name": "hardui",
+  "name": "ui",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "directories": {
-    "doc": "doc"
+    "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test ./node_modules/.bin/mocha --require should",
+    "cov": "NODE_ENV=test ./node_modules/.bin/istanbul cover ./node_modules/.bin/mocha -- --delay"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jaren-gu/hardUI.git"
+    "url": "git+https://github.com/jaren-gu/ui.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jaren-gu/hardUI/issues"
+    "url": "https://github.com/jaren-gu/ui/issues"
   },
-  "homepage": "https://github.com/jaren-gu/hardUI#readme",
+  "homepage": "https://github.com/jaren-gu/ui#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
@@ -29,6 +30,9 @@
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^2.1.1",
     "gulp-uglify": "^2.0.0",
-    "jshint": "^2.9.3"
+    "istanbul": "^0.4.5",
+    "jshint": "^2.9.3",
+    "mocha": "^3.1.2",
+    "should": "^11.1.1"
   }
 }
