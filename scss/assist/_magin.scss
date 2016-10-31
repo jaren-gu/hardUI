@@ -1,0 +1,41 @@
+@for $i from 1 to 21{
+    .mg#{$i}{
+        margin: #{$i}px;
+    }
+
+    .mgt#{$i}{
+        margin-top: #{$i}px;
+    }
+
+    .mgb#{$i}{
+        margin-top: #{$i}px;
+    }
+
+    .mgl#{$i}{
+        margin-top: #{$i}px;
+    }
+
+    .mgr#{$i}{
+        margin-top: #{$i}px;
+    }
+}
+
+.nmg{
+    margin: 0 !important;
+}
+
+.nmgt{
+    margin-top: 0 !important; 
+}
+
+.nmgb{
+    margin-bottom: 0 !important; 
+}
+
+.nmgl{
+    margin-left: 0 !important; 
+}
+
+.nmgr{
+    margin-right: 0 !important; 
+}
